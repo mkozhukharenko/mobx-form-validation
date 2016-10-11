@@ -1,10 +1,8 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames'
-import './form-input.css'
 
 let getFormInputClasses = ({valid, error}) => {
   return classNames('form-input', {
-    'form-input--valid': valid,
     'form-input--error': !!error,
   })
 };
@@ -24,12 +22,10 @@ let FormInput = (props) => {
     </span>
   )
 };
-
 FormInput.PropTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['text', 'email', 'password']),
-  valid: PropTypes.bool,
   error: PropTypes.string,
   placeholder: PropTypes.string,
 };
