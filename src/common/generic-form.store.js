@@ -3,13 +3,15 @@ var Validator = require('validatorjs');
 
 class FormStore {
 
-  getValues = () => {
+  constructor() {
+    this.validationRules = this.getFlattenedValues('rule');
+  }
+
+  getFlattenedValues = (valueKey) => {
     let data = {};
     let form = toJS(this.form).fields;
     Object.keys(form).map(key => {
-      if (form[key] && form[key].value) {
-        data[key] = form[key].value
-      }
+      data[key] = form[key][valueKey]
     });
     return data
   };
@@ -18,7 +20,7 @@ class FormStore {
   onFieldChange = (field, value) => {
     console.log(field, value);
     this.form.fields[field].value = value;
-    var validation = new Validator(this.getValues(), this.validationRules);
+    var validation = new Validator(this.getFlattenedValues('value'), this.validationRules);
     this.form.meta.isValid = validation.passes();
     this.form.fields[field].error = validation.errors.first(field)
   };

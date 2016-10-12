@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import LoginForm from './login/login-form.component';
-import LoginStore from './login/login-store';
+import LoginStore from './login/login.store';
 
 @inject(() => ({
   store: new LoginStore(),

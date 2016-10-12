@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames'
+import './form-input.css'
 
 let getFormInputClasses = ({valid, error}) => {
   return classNames('form-input', {

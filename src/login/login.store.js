@@ -2,21 +2,18 @@ import { observable } from 'mobx'
 import GenericFormStore from './../common/generic-form.store'
 
 class LoginStore extends GenericFormStore {
-  validationRules = {
-    'email': 'required|email',
-    'password': 'required',
-  };
-
-  @observablew
+  @observable
   form = {
     fields: {
       email: {
         value: '',
         error: null,
+        rule: 'required|email'
       },
       password: {
         value: '',
         error: null,
+        rule: 'required'
       },
     },
     meta: {
