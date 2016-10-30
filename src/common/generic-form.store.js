@@ -1,5 +1,5 @@
 import {action, toJS} from 'mobx'
-var Validator = require('validatorjs');
+import Validator from 'validatorjs';
 
 class FormStore {
   getFlattenedValues = (valueKey = 'value') => {

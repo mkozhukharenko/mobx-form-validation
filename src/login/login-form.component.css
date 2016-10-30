@@ -25,9 +25,15 @@
     background: #90C842;
 }
 
-.login-form__submit:enabled:hover {
+.login-form__submit:enabled:hover,
+.login-form__submit:enabled:focus {
     background: #0287CC;
 }
+
+.login-form__submit:enabled:active {
+    background: #146fcc;
+}
+
 .login-form__submit:disabled {
     opacity: 0.4;
 }

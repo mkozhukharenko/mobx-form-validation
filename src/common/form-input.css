@@ -19,7 +19,8 @@
     border: 2px solid red;
 }
 
-.form-input__field:hover {
+.form-input__field:active,
+.form-input__field:focus {
     border: 2px solid #0287CC;
     color: #0287CC;
 }
