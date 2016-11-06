@@ -49,8 +49,14 @@ LoginForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   form: PropTypes.shape({
-    fields: Object,
-    meta: Object
+    fields: PropTypes.objectOf(PropTypes.shape({
+        value: PropTypes.string.isRequired,
+        error: PropTypes.any,
+    })).isRequired,
+    meta: PropTypes.shape({
+        isValid: PropTypes.bool.isRequired,
+        error: PropTypes.any
+    }).isRequired
   }).isRequired
 };
 

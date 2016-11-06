@@ -2,18 +2,18 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames'
 import './form-input.css'
 
-let getFormInputClasses = ({valid, error}) => {
+let getFormInputClasses = ({error}) => {
   return classNames('form-input', {
     'form-input--error': !!error,
   })
 };
 
 let FormInput = (props) => {
-  let {type, error, onChange} = props;
+  let {type, error, onChange, ...rest} = props;
   type = type || 'text';
   return (
     <span className={getFormInputClasses(props)}>
-      <input {...props}
+      <input {...rest}
              className="form-input__field"
              type={type}
              onChange={(e) => onChange(e.target.name, e.target.value)}/>
